@@ -1,4 +1,5 @@
 variable "connection" {
+  description = "An object describing how to connect to target server."
   type = object({
     host        = string
     user        = string
@@ -7,11 +8,13 @@ variable "connection" {
 }
 
 variable "pre_exec" {
-  type    = list(string)
-  default = []
+  description = "A list of commands to execute before provisioning files."
+  type        = list(string)
+  default     = []
 }
 
 variable "files" {
+  description = "A map of files to provision (key = full path of a file, value = file content and ownership/mode)."
   type = map(object({
     content = string
     owner   = string
@@ -21,6 +24,7 @@ variable "files" {
 }
 
 variable "post_exec" {
-  type    = list(string)
-  default = []
+  description = "A list of commands to execute after provisioning files."
+  type        = list(string)
+  default     = []
 }

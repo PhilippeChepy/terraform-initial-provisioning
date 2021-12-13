@@ -42,7 +42,7 @@ EOT
     inline = [
       "chmod +x /tmp/${sha256(self.triggers.deploy_script)}.sh",
       "sudo /tmp/${sha256(self.triggers.deploy_script)}.sh",
-      # "rm /tmp/${sha256(self.triggers.deploy_script)}.sh"
+      "rm /tmp/${sha256(self.triggers.deploy_script)}.sh"
     ]
   }
 }
